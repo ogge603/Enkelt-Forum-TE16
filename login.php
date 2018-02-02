@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 // Besöker sidan för första gången
 if(!isset($_SESSION['loggedIn'])){
 	$_SESSION['loggedIn'] = false;
@@ -46,7 +45,7 @@ else if( isset($_POST['username']) && isset($_POST['password'])){
 	// Identifiera data
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	
+
 	// Formulera fråga
 	$query = "SELECT * FROM users WHERE user_nickname = '$username' AND user_password = '$password'";
 	
@@ -77,7 +76,7 @@ else if( isset($_POST['username']) && isset($_POST['password'])){
 	<body>
 
 		Registreringsformulär:
-		<form action = "index.php" method = "POST">
+		<form action = "login.php" method = "POST">
 			Användarnamn:<input type = "text" name = "username" > </input><br>
 			Fullständigt namn:<input type = "text" name = "name" > </input><br>
 			Födelsedatum:<input type = "date" name = "date" > </input><br>
@@ -89,7 +88,7 @@ else if( isset($_POST['username']) && isset($_POST['password'])){
 		<br><br><br>
 		
 		Loginformulär:
-		<form action = "index.php" method = "POST">
+		<form action = "login.php" method = "POST">
 			Användarnamn:<input type = "text" name = "username" > </input><br>
 			Lösenord:<input type = "password" name = "password" > </input><br>
 			<input type="submit" value = "Logga in" />
